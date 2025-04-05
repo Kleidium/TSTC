@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <!--Head-->
+  <head>
+    <meta charset="utf-8">
+    <meta
+      name="description"
+      content="This is a contact page form for Kc Poland, created for a college assignment.">
+    <meta name="keywords" content="college, form, contact, student, project">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kc Poland's Contact Page</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400&display=swap" rel="stylesheet">
+  </head>
+
+  <!--Body-->
+  <body class="body_content">
+    <!--Header-->
+    <header class="header_class">
+      <h1 class="main_heading">Kc Poland's Contact Page</h1>
+      <nav>
+        <ul class="nav_flex">
+          <li><a href="index.html" title="Home Page">Home</a></li>
+          <li><a href="favorites.html" title="Favorites Page">Favorites</a></li>
+          <li><a href="gallery.html" title="Image Gallery">Gallery</a></li>
+          <li><a href="resume.html" title="Resume Page">Resume</a></li>
+          <li><a href="contact-me.html" title="Contact Page">Contact</a></li>
+          <li><a href="mailto:kpoland@mymail.tstc.edu" title="Student Email Link">Email</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!--Main-->
+    <main>
+      <h2>Contact Me</h2>
+      <!--Contact Form-->
+      <form>
+        <!--Name-->
+        <label for="name">Name</label>
+        <input name="name" id="name" placeholder="required" required>
+
+        <!--Email-->
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="required" required>
+
+        <!--Phone Number-->
+        <label for="tel">Phone Number</label>
+        <input type="tel" name="tel" id="tel" placeholder="optional">
+
+        <!--Website-->
+        <label for="url">Website</label>
+        <input type="url" name="url" id="url" placeholder="optional">
+
+        <!--Meeting Date-->
+        <label for="date">Meeting Date</label>
+        <input type="datetime-local" name="date" id="date" required>
+
+        <!--Meeting Type-->
+        <label for="selectlist">Meeting Type</label>
+        <select name="selectlist" id="selectlist">
+          <option>Phone Meeting</option>
+          <option>Video Meeting</option>
+          <option>In-Person Meeting</option>
+        </select>
+
+        <!--Submit Button-->
+        <input type="submit" name="submit" id="submit">
+
+      </form>
+    </main>
+
+    <!--Footer-->
+    <br>
+    <footer>&copy; 2022-2023 by <a href="mailto:kleidieldyne@gmail.com" rel="author" title="Personal Email Link">Kc Poland</a>. All rights reserved.
+      <br>
+      1337 Fake Street
+      <br>
+      Austin, Texas
+    </footer>
+
+  </body>
+</html>

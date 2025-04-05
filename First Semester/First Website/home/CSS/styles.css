@@ -1,0 +1,466 @@
+/********** Body Defaults **********/
+
+.body_content {
+    background-color: #E2C5F5;
+    min-width: 270px;
+    max-width: 1224px;
+    font-size: 16px;
+    line-height: 150%;
+    color: black;
+    margin: 0 auto;
+    border: 2px solid black;
+    font-family: 'Bitter', serif;
+}
+
+.content_img {
+    text-align: center;
+}
+
+
+/********** Header **********/
+
+header.header_class {
+    text-align: center;
+    padding-bottom: 3%;
+    background-color: #6585C0;
+    border: 4px double black;
+    outline: 2px solid lightcoral;
+}
+
+.nav_flex {
+    display: flex;
+    justify-content: center;
+}
+
+header li {
+    display: inline-block;
+    margin: 2% 2% 0 0;
+}
+
+
+/********** Nav Link States **********/
+
+nav a:link {
+    color: darkslateblue;
+    text-decoration: none;
+    font-size: 1.2em;
+    background-color: lightseagreen;
+    border-style: none;
+    padding: 15px 32px;
+    opacity: 0.7;
+    box-shadow: 1px 1px 10px 2px palegreen;
+}
+
+nav a:visited {
+    color: darkmagenta;
+}
+
+nav a:hover {
+    color: plum;
+    opacity: 1;
+}
+
+nav a:focus {
+    color: blue;
+    opacity: 1;
+}
+
+nav a:active {
+    color: red;
+    opacity: 1;
+}
+
+
+/********** Index **********/
+
+.index_col {
+    column-count: 2;
+    column-width: auto;
+}
+
+.background {
+    break-inside: avoid;
+    text-align: left;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding: 1%;
+    border: 2px solid black;
+    box-shadow: 1px 1px 10px 2px lightcoral;
+    overflow: hidden;
+}
+
+.interests {
+    break-inside: avoid;
+    text-align: left;
+    position: relative;
+    top: 30px;
+}
+
+img.biopic {
+    border: 8px solid black;
+}
+
+picture {
+    float: left;
+    margin: 1%;
+}
+
+
+/********** Gallery **********/
+
+/* Picture Gallery */
+#pictures {
+    padding: 0;
+    margin: 0;
+    border-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2% 1%;
+    padding: 10px;
+}
+
+.col {
+    background-color: lightseagreen;
+    overflow: hidden;
+    text-align: center;
+    border: 2px solid black;
+}
+
+figure img {
+    width: 85%;
+    height: 85%;
+    border: 4px solid #6585C0;
+}
+
+/* Media */
+.audio {
+    text-align: center;
+}
+
+audio {
+    padding: 12px;
+    border: 2px solid black;
+    border-radius: 36px;
+    background-color: lightseagreen;
+}
+
+
+/********** Favorites **********/
+
+/* Lists */
+section li:nth-child(odd) {
+    text-shadow: 3px 3px 3px #6585C0;
+    font-weight: 600;
+}
+
+section li:nth-child(even) {
+    text-shadow: 3px 3px 3px lightcoral;
+    font-weight: 600;
+}
+
+/* Pictures */
+img.favpic {
+    border: 4px solid #6585C0;
+    width: 90%;
+    height: 90%;
+    max-width: 325px;
+    max-height: 325px;
+}
+
+/* Media */
+.video {
+    text-align: center;
+}
+
+video {
+    width: 90%;
+    height: 90%;
+    max-width: 640px;
+    max-height: 480px;
+    border: 6px solid #6585C0;
+    box-shadow: 1px 1px 10px 4px lightcoral;
+}
+
+/* Table */
+.table {
+    overflow-x: auto;
+}
+
+table {
+    text-align: center;
+    margin: 0 auto;
+    background-color: rgb(152, 251, 185, 0.6);
+    border: 4px solid black;
+    border-collapse: collapse;
+    width: 95%;
+    min-width: 560px;
+    max-width: 855px;
+    box-shadow: 1px 1px 10px 2px lightcoral;
+}
+
+tbody tr:nth-child(even) {
+    background-color: paleturquoise;
+}
+
+caption {
+    font-family: 'Roboto Mono', monospace;
+    text-align: left;
+    font-size: 1.4em;
+    font-weight: bold;
+    line-height: 150%;
+    margin-bottom: 1%;
+}
+
+th {
+    background-color: plum;
+    font-size: 1.2em;
+    font-family: 'Roboto Mono', monospace;
+    color: whitesmoke;
+    border: 4px solid black;
+    padding: 8px;
+}
+
+td {
+    border: 2px solid black;
+    padding: 1%;
+    font-weight: bold;
+}
+
+/********** Contact Me ***********/
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: rgb(119, 136, 153);
+    border: 4px solid black;
+    box-shadow: 1px 1px 10px 8px lightcoral;
+}
+
+form label {
+    padding: 4px;
+    margin: 36px 0 12px 0;
+    border: 3px solid black;
+    background-color: lightseagreen;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+form input,
+select {
+    border: 2px solid black;
+    padding: 6px;
+}
+
+input:placeholder-shown {
+    font-style: italic;
+}
+
+#submit {
+    font-family: 'Roboto Mono', monospace;
+    padding: 12px;
+    margin: 60px 0 36px 0;
+    border: 4px solid #6585C0;
+    background-color: lightseagreen;
+    font-size: 1.2em;
+    font-weight: 600;
+    opacity: 0.7;
+    box-shadow: 1px 1px 10px 2px palegreen;
+}
+
+#submit:hover {
+    opacity: 1;
+    color: plum;
+}
+
+#submit:focus {
+    color: blue;
+    opacity: 1;
+}
+
+#submit:active {
+    color: red;
+    opacity: 1;
+}
+
+
+/********** Font Styles **********/
+
+/* General */
+.paragraph {
+    margin-left: 2%;
+    margin-right: 2%;
+    padding: 1%;
+    border: 2px solid black;
+    box-shadow: 1px 1px 10px 2px lightcoral;
+}
+
+figcaption,
+cite,
+a {
+    font-family: 'Roboto Mono', monospace;
+}
+
+ul,
+ol {
+    list-style-type: square;
+    text-align: center;
+    padding-left: 0;
+    list-style-position: inside;
+}
+
+blockquote {
+    text-align: center;
+}
+
+/* Headings */
+h1.main_heading {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 3em;
+    line-height: 102.5%;
+    color: lightseagreen;
+    text-shadow: 2px 2px 2px palegreen;
+}
+
+h2 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.8em;
+    font-weight: bold;
+    line-height: 102.5%;
+    text-align: center;
+    padding-bottom: 2%;
+}
+
+h2:first-child {
+    background-color: lightseagreen;
+    padding: 2% 0;
+}
+
+h3,
+dt {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.25em;
+    font-weight: bold;
+    line-height: 150%;
+    margin-top: 4%;
+    padding-left: 2%;
+}
+
+dt::first-letter,
+h3::first-letter {
+    color: #6585C0;
+    font-size: 1.2em;
+    border: 2px solid black;
+    border-radius: 20%;
+}
+
+
+/********** Content Link States **********/
+
+.content_link:link {
+    color: darkslateblue;
+}
+
+.content_link:visited {
+    color: darkmagenta;
+}
+
+.content_link:hover {
+    color: yellow;
+}
+
+.content_link:focus {
+    color: blue;
+}
+
+.content_link:active {
+    color: red;
+}
+
+
+/********** Footer **********/
+
+footer {
+    margin-top: 5%;
+    text-align: center;
+    font-weight: bold;
+    background-color: #6585C0;
+    border: 4px double black;
+    outline: 2px solid lightcoral;
+}
+
+
+/********** Footer Link States **********/
+
+footer a:link {
+    color: darkslateblue;
+}
+
+footer a:visited {
+    color: darkmagenta;
+}
+
+footer a:hover {
+    color: plum;
+}
+
+footer a:focus {
+    color: blue;
+}
+
+footer a:active {
+    color: red;
+}
+
+
+/********** Media Queries **********/
+
+/* Tablets */
+@media screen and (min-width: 521px) and (max-width: 920px) {
+    #pictures {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    nav a:link {
+        padding: 4px;
+    }
+
+    img.biopic {
+        width: 80%;
+        height: 80%;
+    }
+}
+
+/* Phones */
+@media screen and (max-width: 520px) {
+    #pictures {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .index_col {
+        column-count: 1;
+    }
+
+    .nav_flex {
+        flex-direction: column;
+    }
+
+    nav a:link {
+        padding: 2px;
+    }
+
+    header li {
+        margin: 4% 4% 0 0;
+    }
+
+    img.biopic {
+        width: 80%;
+        height: 80%;
+    }
+}
