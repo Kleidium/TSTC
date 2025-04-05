@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <!--Head-->
+  <head>
+    <meta charset="utf-8">
+    <meta
+      name="description"
+      content="This is a contact page for The Wash Tub, a pet grooming service.">
+    <meta name="keywords" content="pets, grooming, pet grooming, cats, dogs, booking, contact, business, form">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wash Tub: Contact</title>
+    <!--Styles-->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap" rel="stylesheet">
+    <!--Scripts-->
+    <script src="JavaScript/formValidation.js" defer></script>
+  </head>
+
+  <!--Body-->
+  <body class="body">
+    <!--Header-->
+    <header class="header">
+      <h1 class="main_heading">The Wash Tub</h1>
+      <nav>
+        <ul class="nav">
+          <li><a href="index.html" title="Home Page">Home</a></li>
+          <li><a href="contactUs.html" title="Contact Page">Contact</a></li>
+          <li><a href="manipulatingDOM.html" title="About Page">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!--Main-->
+    <main>
+      <section class="contact_section">
+        <h2>Contact Us!</h2>
+        <form id="contact_form">
+          <!--Name-->
+          <div class="contact_field">
+            <label class="label" for="name">Name:</label>
+            <input name="name" id="name" placeholder="required">
+          </div>
+
+          <!--Phone Number-->
+          <div class="contact_field">
+            <label class="label" for="tel">Phone Number:</label>
+            <input name="tel" id="tel" type="tel" placeholder="required">
+          </div>
+
+          <!--Email-->
+          <div class="contact_field">
+            <label class="label" for="email">Email:</label>
+            <input name="email" id="email" type="email">
+          </div>
+
+          <!--Contact Method-->
+          <div class="contact_field">
+            <p class="label">Contact Method:</p>
+            <input type="radio" id="phone_method" name="contact_method" value="phone" checked>
+            <label for="phone_method">Phone</label><br>
+            <input type="radio" id="email_method" name="contact_method" value="email">
+            <label for="email_method">Email</label><br>
+          </div>
+
+          <!--Services-->
+          <div class="contact_field">
+            <p class="label">Services:</p>
+            <input type="checkbox" id="bath" name="bath" value="15">
+            <label for="bath">Bath $15.00</label><br>
+            <input type="checkbox" id="haircut" name="haircut" value="20">
+            <label for="haircut">Haircut $20.00</label><br>
+            <input type="checkbox" id="nail_trim" name="nail_trim" value="10">
+            <label for="nail_trim">Nail Trim $10.00</label>
+          </div>
+
+          <!--Pet Type-->
+          <div class="contact_field">
+            <label class="label" for="selectlist">Pet Type:</label>
+            <select name="selectlist" id="selectlist">
+              <option>Dog</option>
+              <option>Cat</option>
+            </select>
+          </div>
+
+          <!-- Comments -->
+          <div class="contact_field">
+            <p class="label">Comments:</p>
+            <textarea name="comments" id="comments" rows="6" cols="40" placeholder="Additional comments/instructions here..."></textarea>
+          </div>
+
+          <!--Submit/Reset Buttons-->
+          <div class="center">
+            <input type="submit" name="submit" id="submit">
+          </div>
+          <div class="center">
+            <input type="reset" name="reset" id="reset" value="Reset">
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <!--Footer-->
+    <br>
+    <footer>&copy; 2022-2023 by The Wash Tub Inc. All rights reserved.
+      <br>
+      1234 Something Street
+      <br>
+      Abilene, Texas
+    </footer>
+
+  </body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <!--Head-->
+  <head>
+    <meta charset="utf-8">
+    <meta
+      name="description"
+      content="This is an ordering page for Tommy's Tees, a T-shirt designer.">
+    <meta name="keywords" content="apparel, custom, shirt, t-shirt, clothes, purchasing, ordering, business, form">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tommy's Tees: Ordering</title>
+    <!--Styles-->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <!--Scripts-->
+    <script src="JavaScript/order.js" defer></script>
+  </head>
+
+  <!--Body-->
+  <body class="body">
+    <!--Header-->
+    <header class="header">
+      <h1 class="main_heading">Tommy's Tees</h1>
+      <nav>
+        <ul class="nav">
+          <li><a href="home.html" title="Home Page">Home</a></li>
+          <li><a href="designs.html" title="Design Page">Designs</a></li>
+          <li><a href="order.html" title="Ordering Page">Order</a></li>
+          <li><a href="about.html" title="About Page">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!--Main-->
+    <main>
+      <!-- Images -->
+      <div class="side_images">
+        <img class="leftpic" src="Images/boy_300x450.jpg" width="300" height="450" alt="Teenage boy wearing a black shirt depicting a skeletal hand which is signing the peace symbol.">
+        <img class="rightpic" src="Images/girl_300x450.jpg" width="300" height="450" alt="Closeup picture of a young woman wearing a white v-neck depicting a stylized red dragon design.">
+      </div>
+
+      <!-- Ordering Form -->
+      <section class="center">
+        <h2>Ordering Form</h2>
+        <form id="order_form">
+          <!--First Name-->
+          <div class="order_field">
+            <label class="field_label" for="first_name">First Name:</label>
+            <input name="first_name" id="first_name" placeholder="required">
+          </div>
+
+          <!--Last Name Name-->
+          <div class="order_field">
+            <label class="field_label" for="last_name">Last Name:</label>
+            <input name="last_name" id="last_name" placeholder="required">
+          </div>
+
+          <!--Phone Number-->
+          <div class="order_field">
+            <label class="field_label" for="tel">Phone:</label>
+            <input name="tel" id="tel" type="tel" placeholder="required">
+          </div>
+
+          <!--Email-->
+          <div class="order_field">
+            <label class="field_label" for="email">Email:</label>
+            <input name="email" id="email" type="email">
+          </div>
+
+          <!--Options-->
+          <div class="order_field">
+            <p class="field_label">Options:</p>
+            <input type="checkbox" id="gift_wrapped" name="gift_wrapped" value="3">
+            <label for="gift_wrapped">Gift Wrapped, $3.00</label><br>
+            <input type="checkbox" id="name_embroidery" name="name_embroidery" value="7">
+            <label for="name_embroidery">Name Embroidery, $7.00</label><br>
+            <input type="checkbox" id="v_neck" name="v_neck" value="5">
+            <label for="v_neck">V-neck Style, $5.00</label>
+          </div>
+
+          <!--Material-->
+          <div class="order_field">
+            <p class="field_label">Material:</p>
+            <input type="radio" id="cotton" name="material" value="10" checked>
+            <label for="cotton">Cotton, $10.00</label><br>
+            <input type="radio" id="polyblend" name="material" value="15">
+            <label for="polyblend">Polyblend, $15.00</label><br>
+          </div>
+
+          <!--Size-->
+          <div class="order_field">
+            <label class="field_label" for="sizelist">Size:</label>
+            <select name="sizelist" id="sizelist">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+          </div>
+
+          <!--Color-->
+          <div class="order_field">
+            <label class="field_label" for="colorlist">Color:</label>
+            <select name="colorlist" id="colorlist">
+              <option>White</option>
+              <option>Black</option>
+              <option>Grey</option>
+              <option>Brown</option>
+              <option>Blue</option>
+              <option>Red</option>
+            </select>
+          </div>
+
+          <!--Quantity-->
+          <div class="order_field center">
+            <label class="field_label" for="quantity">Quantity:</label>
+            <input name="quantity" id="quantity"  type="number" min="1" max="20" value="1">
+          </div>
+
+          <!--Submit/Reset Buttons-->
+          <div class="center">
+            <input type="submit" name="submit" id="submit">
+            <input type="reset" name="reset" id="reset" value="Reset">
+          </div>
+        </form>
+
+        <!-- Order Results -->
+        <div class="results">
+          <h2>Order Details:</h2>
+          <h3>Name:</h3>
+          <div>Name</div>
+
+          <h3>Phone:</h3>
+          <div>Phone</div>
+
+          <h3>Email:</h3>
+          <div>Email</div>
+
+          <h3>Shirt Options:</h3>
+          <div>Gift Wrapped</div>
+          <div>Name Embroidery</div>
+          <div>V-Neck</div>
+
+          <h3>Shirt Material:</h3>
+          <div>Materials</div>
+
+          <h3>Shirt Size:</h3>
+          <div>Size</div>
+
+          <h3>Shirt Color:</h3>
+          <div>Color</div>
+
+          <h3>Shirt Quantity:</h3>
+          <div>Quantity</div>
+
+          <h3>Order Total:</h3>
+          <div>Subtotal</div>
+          <div>Tax</div>
+          <div>Total</div>
+        </div>
+      </section>
+    </main>
+
+    <!--Footer-->
+    <footer>&copy; 2023 by Tommy's Tees Inc. All rights reserved.
+      <div>3456 Fake Avenue</div>
+      Dallas, Texas
+    </footer>
+
+  </body>
+</html>

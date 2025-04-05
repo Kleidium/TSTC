@@ -1,0 +1,268 @@
+/* #E9D9EE; rosewater */
+/* #DFB8DA; light pink */
+/* #C722B1; fuchsia */
+/* #4B3DC4; bold blue */
+/* #7961DB; blue-purple */
+/* #01A9DE; sky blue */
+/* #7196D7; cool blue */
+
+
+/********** General **********/
+.body {
+    background-color: #E9D9EE;
+    min-width: 300px;
+    max-width: 1600px;
+    font-size: 16px;
+    color: black;
+    margin: 0 auto;
+    padding: 12px;
+    font-family: 'Zilla Slab', serif;
+}
+
+.center {
+    text-align: center;
+}
+
+/* Text Headers */
+h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2em;
+    color: #4B3DC4;
+}
+
+h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #01A9DE;
+}
+
+
+/********** Main Header **********/
+.header {
+    border: 4px solid #7196D7;
+    border-radius: 130px;
+    text-align: center;
+    background-color: #DFB8DA;
+    padding-bottom: 24px;
+}
+
+.main_heading {
+    font-family: 'Indie Flower', cursive;
+    font-size: 5.5em;
+    font-weight: 500;
+    color: #7961DB;
+    text-shadow: 2px 2px 2px #7196D7;
+    margin-top: 0px;
+}
+
+.nav {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+header li {
+    display: inline-block;
+    margin: 0 2% 0 0;
+}
+
+nav a {
+    color: #C722B1;
+    text-decoration: none;
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.5em;
+    background-color: #7196D7;
+    border: 4px solid #7961DB;
+    padding: 12px 16px 12px 16px;
+    border-radius: 30px 0px 30px 0px;
+}
+
+/* Nav Link States */
+nav a:hover {
+    color: yellow;
+}
+
+nav a:focus {
+    color: yellow;
+}
+
+nav a:active {
+    color: white;
+}
+
+
+/********** Ordering Page **********/
+
+/* Images */
+.leftpic {
+    float: left;
+    border: 4px solid #4B3DC4;
+    box-shadow: 0px 0px 50px 0px darkslategray;
+    margin: 250px 0px 0px 140px;
+    max-width: 300px;
+}
+
+.rightpic {
+    float: right;
+    border: 4px solid #4B3DC4;
+    box-shadow: 0px 0px 50px 0px darkslategray;
+    margin: 250px 140px 0px 0px;
+    max-width: 300px;
+}
+
+/* Form */
+form {
+    display: inline-block;
+    text-align: left;
+    background-color: #DBDBDB;
+    border: 4px dashed #4B3DC4;
+    padding: 0 40px 26px 40px;
+}
+
+.field_label {
+    margin-right: 12px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #01A9DE;
+}
+
+.order_field {
+    margin: 35px 0;
+}
+
+input,
+select {
+    padding: 4px;
+}
+
+input:placeholder-shown {
+    font-style: italic;
+}
+
+#submit, #reset {
+    color: #C722B1;
+    text-decoration: none;
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.5em;
+    background-color: #7196D7;
+    border: 4px solid #7961DB;
+    padding: 4px 8px 4px 8px;
+    border-radius: 30px 0px 30px 0px;
+    margin: 28px 25px 0px 25px;
+}
+
+#submit:hover, #reset:hover {
+    color: yellow;
+}
+
+#submit:focus, #reset:focus {
+    color: yellow;
+}
+
+#submit:active, #reset:active {
+    color: white;
+    transform: scale(.9);
+}
+
+/* Order Results */
+.results {
+    display: none;
+}
+
+
+/********** Footer **********/
+footer {
+    margin-top: 5%;
+    text-align: center;
+    background-color: #DFB8DA;
+    border: 4px solid #7196D7;
+    border-radius: 130px;
+    clear: both;
+}
+
+
+/********** Media Queries **********/
+
+/* Image Adjustment, Tablet to Desktop */
+@media screen and (min-width: 501px) and (max-width: 1375px) {
+    .leftpic {
+        float: none;
+        margin: 0px 25px 0px 0px;
+        width: 42%;
+        height: 42%;
+    }
+
+    .rightpic {
+        float: none;
+        margin: 0px 0px 0px 25px;
+        width: 42%;
+        height: 42%;
+    }
+
+    .side_images {
+        text-align:center;
+        margin: 80px 0px 60px 0px;
+    }
+}
+
+/* Tablets */
+@media screen and (min-width: 501px) and (max-width: 920px) {
+    nav a {
+        padding: 8px 12px 8px 12px;
+    }
+
+    .main_heading {
+        font-size: 4em;
+    }
+}
+
+/* Phones */
+@media screen and (max-width: 500px) {
+    .nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        padding: 4px 8px 4px 8px;
+    }
+
+    .main_heading {
+        font-size: 3.5em;
+    }
+
+    .leftpic {
+        float: none;
+        margin: 0px 0px 0px 0px;
+    }
+
+    .rightpic {
+        float: none;
+        margin: 0px 0px 0px 0px;
+    }
+
+    .side_images {
+        text-align:center;
+        margin: 80px 0px 60px 0px;
+    }
+
+    header li {
+        margin: 8% 8% 0 0;
+    }
+
+    input,
+    select {
+        display: block;
+        margin-top: 22px;
+    }
+
+    .header, footer {
+        border-radius: 0px;
+    }
+
+    #submit, #reset {
+        margin: 38px auto 12px auto;
+        padding: 8px 16px;
+    }
+}

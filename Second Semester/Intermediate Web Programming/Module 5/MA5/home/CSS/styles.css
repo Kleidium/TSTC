@@ -1,0 +1,266 @@
+/* #773344; wine */
+/* #CD8987; old rose */
+/* #6883BA; glaucous */
+/* #FBFBFF; ghost white */
+/* #7EB77F; olivine */
+
+/********** General **********/
+.body {
+    background-color: #FBFBFF;
+    min-width: 270px;
+    max-width: 1440px;
+    font-size: 16px;
+    line-height: 150%;
+    color: black;
+    margin: 0 auto;
+    padding: 12px;
+    border: 4px double #7E6551;
+    font-family: 'Maven Pro', sans-serif;
+}
+
+.center {
+    text-align: center;
+}
+
+.paragraph {
+    border: 4px dotted #6883BA;
+    padding: 8px;
+    border-radius: 20px;
+}
+
+/* Text Headers */
+h2 {
+    font-family: 'Oxygen', sans-serif;
+    font-size: 2em;
+    color: #773344;
+}
+
+h3 {
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1.4em;
+    color: black;
+}
+
+
+/********** Main Header **********/
+.header {
+    border: 4px solid #6883BA;
+    outline: 2px solid #CD8987;
+    text-align: center;
+    background-color: rgb(35, 104, 35, 0.4);
+    padding-bottom: 24px;
+}
+
+.main_heading {
+    font-family: 'Oxygen', sans-serif;
+    font-size: 4em;
+    font-weight: 400;
+    color: #6883BA;
+    text-shadow: 4px 4px 4px #CD8987;
+}
+
+.nav {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+header li {
+    display: inline-block;
+    margin: 2% 2% 0 0;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.2em;
+    background-color: lightgray;
+    border: 4px solid #CD8987;
+    padding: 12px;
+    opacity: 0.7;
+    border-radius: 30px;
+}
+
+/* Nav Link States */
+nav a:hover {
+    color: limegreen;
+    font-size: 1.3em;
+    opacity: 1;
+}
+
+nav a:focus {
+    color: limegreen;
+    font-size: 1.3em;
+    opacity: 1;
+}
+
+nav a:active {
+    color: white;
+    font-size: 1.3em;
+    opacity: 1;
+}
+
+nav a:visited {
+    color: violet;
+    font-size: 1.3em;
+    opacity: 1;
+}
+
+
+/********** Index **********/
+.welcome {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.news {
+    margin-top: 5%;
+}
+
+li.paragraph {
+    margin: 16px 0;
+    list-style: circle;
+    background-color: lightgray;
+}
+
+li.paragraph:nth-child(odd) {
+    border-color: #CD8987;
+}
+
+img {
+    border: 4px solid #CD8987;
+    outline: 8px dotted #6883BA;
+    outline-offset: 2px;
+    margin: 12px 0px;
+}
+
+
+/********** Contact **********/
+.contact_section {
+    text-align: center;
+    margin-top: 56px;
+}
+
+form {
+    display: inline-block;
+    text-align: left;
+    border: 4px solid #CD8987;
+    padding: 0 12px 26px 12px;
+    outline: 8px dotted #6883BA;
+    outline-offset: 2px;
+}
+
+.contact_field {
+    margin: 40px 0;
+}
+
+.label {
+    margin-right: 12px;
+    border: 4px solid #CD8987;
+    padding: 5px;
+    border-radius: 20px;
+    background-color: lightgray;
+}
+
+input,
+select {
+    padding: 4px;
+}
+
+input:placeholder-shown {
+    font-style: italic;
+}
+
+#comments {
+    resize: none;
+}
+
+#submit, #reset {
+    text-decoration: none;
+    font-size: 1.2em;
+    background-color: lightgray;
+    border: 4px solid #CD8987;
+    padding: 12px 24px;
+    margin-top: 28px;
+    opacity: 0.7;
+    border-radius: 20px;
+}
+
+#submit:hover, #reset:hover {
+    color: limegreen;
+    opacity: 1;
+}
+
+#submit:focus, #reset:focus {
+    color: limegreen;
+    opacity: 1;
+}
+
+#submit:active, #reset:active {
+    color: white;
+    opacity: 1;
+}
+
+
+/********** Footer **********/
+footer {
+    margin-top: 5%;
+    text-align: center;
+    background-color: rgb(35, 104, 35, 0.4);
+    border: 4px solid #6883BA;
+    outline: 2px solid #CD8987;
+    clear: both;
+}
+
+
+/********** Media Queries **********/
+
+/* Tablets */
+@media screen and (min-width: 501px) and (max-width: 920px) {
+    nav a {
+        padding: 16px;
+    }
+
+    .main_heading {
+        font-size: 3.5em;
+    }
+}
+
+/* Phones */
+@media screen and (max-width: 500px) {
+    .nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        padding: 8px;
+    }
+
+    .main_heading {
+        font-size: 2.3em;
+    }
+
+    h2 {
+        line-height: 120%;
+    }
+
+    header li {
+        margin: 12% 12% 0 0;
+    }
+
+    img {
+        width: 90%;
+        height: 90%;
+    }
+
+    input,
+    select {
+        display: block;
+        margin-top: 24px;
+    }
+
+    #submit, #reset {
+        margin: 24px auto 12px auto;
+        padding: 8px 16px;
+    }
+}
