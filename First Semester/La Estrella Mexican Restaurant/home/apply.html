@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <!--Head-->
+  <head>
+    <meta charset="utf-8">
+    <meta
+      name="description"
+      content="This is a job application form for La Estrella Mexican Restaurant.">
+    <meta name="keywords" content="food, mexican, restaurant, application, form">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡La Estrella! Application</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Radio+Canada&family=Rubik+Dirt&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+  </head>
+
+  <!--Body-->
+  <body class="body">
+    <!--Header-->
+    <header class="header">
+      <h1 class="main_heading"><span lang="es">¡LA ESTRELLA!</span></h1>
+      <nav>
+        <ul class="nav">
+          <li><a href="index.html" title="Home Page">Home</a></li>
+          <li><a href="menu.html" title="Menu Page">Menu</a></li>
+          <li><a href="apply.html" title="Application Page">Apply</a></li>
+          <li><a href="about.html" title="About Page">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!--Main-->
+    <main>
+      <section class="application">
+        <h2>Apply now!</h2>
+        <form>
+          <!--Name-->
+          <div class="app_field">
+            <label for="name">Name</label>
+            <input name="name" id="name" placeholder="required" required>
+          </div>
+
+          <!--Phone Number-->
+          <div class="app_field">
+            <label for="tel">Phone Number</label>
+            <input name="tel" id="tel" type="tel" placeholder="required" required>
+          </div>
+
+          <!--Email-->
+          <div class="app_field">
+            <label for="email">Email</label>
+            <input name="email" id="email" type="email" placeholder="required" required>
+          </div>
+
+          <!--Contact Method-->
+          <div class="app_field">
+            <label for="selectlist">Contact Method</label>
+            <select name="selectlist" id="selectlist">
+              <option>Phone</option>
+              <option>Email</option>
+              <option>Both</option>
+            </select>
+          </div>
+
+          <!--Resume-->
+          <div class="app_field">
+            <label for="file">Resume</label>
+            <input name="file" id="file" type="file" accept=".doc,.docx,.txt,.pdf">
+          </div>
+
+          <!--Earliest Availability-->
+          <div class="app_field">
+            <label for="week">Earliest Availability</label>
+            <input name="week" id="week" type="week" required>
+          </div>
+
+          <!--Submit Button-->
+          <div class="center">
+            <input type="submit" name="submit" id="submit">
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <!--Footer-->
+    <br>
+    <footer>&copy; 2022-2023 by <span lang="es">¡La Estrella!</span> Inc. All rights reserved.
+      <br>
+      1023 Another Street
+      <br>
+      Dallas, Texas
+    </footer>
+
+  </body>
+</html>
