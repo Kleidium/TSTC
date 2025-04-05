@@ -1,0 +1,3 @@
+Largest Number: 99
+Smallest Number: 1
+Average Value of Numbers: 31.8
