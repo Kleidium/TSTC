@@ -1,0 +1,36 @@
+{% extends 'agents/base.html' %}
+{% block 'body' %}
+
+{% comment %} Content {% endcomment %}
+<section class="py-5 text-center container">
+  <div class="row py-lg-5">
+    <div class="col-lg-6 col-md-8 mx-auto">
+      <h1 class="fw-light">Our Agents</h1>
+      <p class="lead">Our agents come from varied backgrounds, and all are uniquely qualified to help you find your dream home. Whether in a suburb or on the beachfront, our agents will work with you to find the best deals. Your satisfaction is guaranteed. Get to know them here.</p>
+    </div>
+  </div>
+</section>
+
+<div>
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      {% for agent in agents.all %}
+        <div class="col">
+          <div class="card shadow-sm" style="margin:5px">
+            <a href="{% url 'detail' agent.id %}">
+            <img class="card-img-top" src="{{ agent.picture.url }}" height=620>
+            </a>
+            <div class="card-body">
+              <p class="card-text" style="font-weight:600;text-align:center">{{ agent.firstName }} {{ agent.lastName }}</p>
+              <div class="d-flex justify-content-between align-items-center">
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

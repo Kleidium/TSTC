@@ -1,0 +1,35 @@
+{% extends 'agents/base.html' %}
+{% block 'body' %}
+
+{% comment %} Content {% endcomment %}
+<h1 style="margin: 45px 0px 0px 0px">Contact Us</h1>
+<h3 style="color: seagreen">{{ message }}</h3>
+<h3>{{ error }}</h3>
+
+<form action="{% url 'contact' %}" method="post" style="display:inline-block;border:4px solid darkslategray; padding:12px; margin:10px 0px 30px 0px">
+	{% csrf_token %}
+	<h6>{{ contactform.name.errors }}</h6>
+	<h4>{{ contactform.name.label_tag }}</h4>
+	{{ contactform.name }}
+	<br><br>
+	<h6>{{ contactform.email.errors }}</h6>
+	<h4>{{ contactform.email.label_tag }}</h4>
+	{{ contactform.email }}
+	<br><br>
+	<h6>{{ contactform.phone.errors }}</h6>
+	<h4>{{ contactform.phone.label_tag }}</h4>
+	{{ contactform.phone }}
+	<br><br>
+	<h6>{{ contactform.transaction.errors }}</h6>
+	<h4>{{ contactform.transaction.label_tag }}</h4>
+	{{ contactform.transaction }}
+	<br>
+	<h6>{{ contactform.comment.errors }}</h6>
+	<h4>{{ contactform.comment.label_tag }}</h4>
+	{{ contactform.comment }}
+	<br><br><br>
+	<input type="submit" value="Submit"></input>
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,177 @@
+{% extends "../base.html" %}
+{% load static %}
+{% block title %}Fictitious Tees: Your Cart{% endblock %}
+
+
+{% block style %}
+<style>
+	select {margin: 10px;}
+
+	select option:first-child {font-weight: bold;}
+
+	img {border: 4px solid palevioletred;}
+
+	#update-button {
+		margin-left: 30px;
+		background-color: lightgreen;
+		font-weight: bold;
+	}
+
+	#delete-button {
+		margin-left: 10px;
+		background-color: lightcoral;
+		font-weight: bold;
+	}
+</style>
+{% endblock %}
+
+{% block content %}
+<main class="pt-5">
+	<div class="container">
+	  <h1 class="h5">Your Cart</h1>
+	  {% for item in cart %}
+		{% with design=item.design %}
+			<div data-index="{{design.id}}" class="row mb-4 border design-item">
+				<div class="col-md-3 col-lg-2 order-md-first bg-light">
+					<a href="{{ design.get_absolute_url }}"><img class="img-fluid mx-auto d-block" width="140px" alt="Responsive image" src="{{ design.image.url }}"></a>
+				</div>
+				<div class="col-md-9 col-lg-10 ps-md-3 ps-lg-10">
+					<a href="{{ design.get_absolute_url }}" class="text-decoration-none text-reset">
+						<h1 class="h5 pt-2">{{ design.name }}</h1>
+					</a>
+					<div class="border">
+						<div class="col border-bottom">
+							<div class="row p-3">
+								<div class="col-6">{{ design.category }} Shirt; ${{ design.price }}</div>
+								<div class="col-6 text-end"><span class="h6 fw-bold" id="item-total{{design.id}}">${{ item.total_price }}</span></div>
+							</div>
+						</div>
+						<div class="col">
+							<div class="row p-3">
+								<div class="col-12">
+									<label for="size">Size:</label>
+									<select id="size{{design.id}}">
+										<option selected>
+										{{item.size}}
+										</option>
+										<option value="S">S</option>
+										<option value="M">M</option>
+										<option value="L">L</option>
+										<option value="XL">XL</option>
+										<option value="2XL">2XL</option>
+										<option value="3XL">3XL</option>
+									</select>
+									<label for="material">Material:</label>
+									<select id="material{{design.id}}">
+										<option selected>
+										{{item.material}}
+										</option>
+                                        <option value="Cotton">Cotton</option>
+                                        <option value="Polyester">Polyester</option>
+                                        <option value="Polyblend">Polyblend</option>
+									</select>
+									<label for="color">Color:</label>
+									<select id="color{{design.id}}">
+										<option selected>
+										{{item.color}}
+										</option>
+                                        <option value="White">White</option>
+                                        <option value="Black">Black</option>
+                                        <option value="Grey">Grey</option>
+                                        <option value="Brown">Brown</option>
+									</select>
+									<label for="qty">Qty:</label>
+									<select id="qty{{design.id}}">
+										<option selected>
+										{{item.qty}}
+										</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+										<option value="7">7</option>
+										<option value="8">8</option>
+										<option value="9">9</option>
+										<option value="10">10</option>
+									</select>
+									<button type="button" id="update-button" data-index="{{design.id}}"
+										class="btn btn-outline-secondary btn-sm update-button">
+										Update
+									</button>
+									<button type="button" id="delete-button" data-index="{{design.id}}"
+										class="btn btn-outline-secondary btn-sm delete-button">
+										Delete
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endwith %}
+	  {% endfor %}
+	  <div class="col-12 text-end">
+		<div class="h6 fw-bold">
+			Subtotal: $<div id="subtotal" class="d-inline-flex">{{cart.get_total_price}}</div>
+		</div>
+	  </div>
+	</div>
+</main>
+
+
+<script>
+	{% comment %} Delete Item {% endcomment %}
+    $(document).on('click', '.delete-button', function (e) {
+        e.preventDefault();
+		var designid = $(this).data('index');
+        $.ajax({
+            type: 'POST',
+            url: '{% url "cart:cart_delete" %}',
+            data: {
+                designid: $(this).data('index'),
+                csrfmiddlewaretoken: "{{csrf_token}}",
+                action: 'post'
+            },
+            success: function (json) {
+				$('.design-item[data-index="' + designid + '"]').remove();
+				document.getElementById("cart-qty").innerHTML = json.qty
+				document.getElementById("subtotal").innerHTML = json.subtotal
+            },
+            error: function (xhr, errmsg, err) {
+                console.log("An error has occurred.");
+            }
+        });
+    })
+
+	{% comment %} Update Item {% endcomment %}
+	  $(document).on('click', '.update-button', function (e) {
+		e.preventDefault();
+		var designid = $(this).data('index');
+		$.ajax({
+		  type: 'POST',
+		  url: '{% url "cart:cart_update" %}',
+		  data: {
+			designid: $(this).data('index'),
+			designqty: $('#qty' + designid + ' option:selected').val(),
+			designsize: $('#size' + designid + ' option:selected').val(),
+			designmaterial: $('#material' + designid + ' option:selected').val(),
+			designcolor: $('#color' + designid + ' option:selected').val(),
+			csrfmiddlewaretoken: "{{csrf_token}}",
+			action: 'post'
+		  },
+		  success: function (json) {
+			document.getElementById("cart-qty").innerHTML = json.qty
+			document.getElementById("subtotal").innerHTML = json.subtotal
+			document.getElementById("item-total" + designid).innerHTML = "$" + json.itemtotal
+		  },
+		  error: function (xhr, errmsg, err) {
+			console.log("An error has occurred.");
+		  }
+		});
+	  })
+</script>
+
+
+{% endblock %}

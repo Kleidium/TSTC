@@ -1,0 +1,101 @@
+{% extends "../../base.html" %}
+{% load static %}
+{% block title %}Fictitious Tees: Edit Profile{% endblock %}
+
+
+{% block content %}
+
+  <style>
+    .account-form input {
+      border: 2px solid #ccc;
+      height: calc(2em + 0.75rem + 2px);
+    }
+    
+    .account-form input:focus {
+      border-color: #1497ff;
+      box-shadow: none;
+    }
+    
+    .read-only {
+      font-style: italic;
+    }
+    
+    .country-select-flag {
+      display: none; /* Used to hide broken country flag from django_countries widget. */
+    }
+  </style>
+
+  <div class="container-fluid">
+    <div class="row no-gutter">
+      <div class="col-md-12">
+        <div class="login d-flex align-items-center py-5">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-lg-7 mx-auto">
+
+                {% comment %}Edit Profile{% endcomment %}
+                <form class="account-form px-4 pt-4" method="post" enctype="multipart/form-data">
+                  {% if user_form.is_valid %}
+                    <div class="alert alert-primary" role="alert">Profile updated.</div>
+                    <p class="small text-center pt-0">
+                      <a href="{% url 'account:dashboard' %}">Back to Dashboard</a>
+                    </p>
+                  {% else %}
+                    <h3>Edit Your Profile</h3>
+                  {% endif %}
+
+                  {% if form.errors %}
+                    <div class="alert alert-primary" role="alert">Error: Please try again.</div>
+                  {% endif %}
+
+                  {% csrf_token %}
+
+                  {% comment %}Required/Read Only{% endcomment %}
+                  <label class="small font-weight-bold">{{ user_form.email.label }}</label>
+                  {{ user_form.email }}
+                  <label class="small font-weight-bold">{{ user_form.user_name.label }}</label>
+                  {{ user_form.user_name }}
+                  <br />
+
+                  {% comment %}Optional{% endcomment %}
+                  <label class="small font-weight-bold">{{ user_form.first_name.label }}</label>
+                  {{ user_form.first_name }}
+                  <label class="small font-weight-bold">{{ user_form.last_name.label }}</label>
+                  {{ user_form.last_name }}
+                  <label class="small font-weight-bold">{{ user_form.phone.label }}</label>
+                  {{ user_form.phone }}
+                  <label class="small font-weight-bold">{{ user_form.address_1.label }}</label>
+                  {{ user_form.address_1 }}
+                  <label class="small font-weight-bold">{{ user_form.address_2.label }}</label>
+                  {{ user_form.address_2 }}
+                  <label class="small font-weight-bold">{{ user_form.city.label }}</label>
+                  {{ user_form.city }}
+                  <label class="small font-weight-bold">{{ user_form.state.label }}</label>
+                  {{ user_form.state }}
+                  <label class="small font-weight-bold">{{ user_form.zipcode.label }}</label>
+                  {{ user_form.zipcode }}
+                  <label class="small font-weight-bold">{{ user_form.country.label }}</label>
+                  <div>
+                    {{ user_form.country }}
+                  </div>
+                  <label class="small font-weight-bold">{{ user_form.about.label }}</label>
+                  {{ user_form.about }}
+
+                  <button class="btn btn-primary btn-block py-2 mb-4 mt-5 fw-bold w-100" type="submit" value="Save changes">Save Changes</button>
+                  <hr class="mb-3" />
+                </form>
+
+                {% comment %}Delete Account{% endcomment %}
+                <form class="account-form px-4" action="{% url 'account:delete_user' %}" method="post">
+                  {% csrf_token %}
+                  <button type="submit" role="button" class="btn btn-danger btn-block py-2 mb-4 mt-5 fw-bold w-100">Delete Account</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

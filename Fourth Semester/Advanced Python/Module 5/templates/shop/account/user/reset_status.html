@@ -1,0 +1,50 @@
+{% extends "../../base.html" %}
+{% block title %}Fictitious Tees: Reset Status{% endblock %}
+
+
+{% block content %}
+
+<style>
+    .container-fluid {
+        max-width: 100%;
+    }
+
+    .account-form input {
+        border: 2px solid #ccc;
+        height: calc(2em + .75rem + 2px);
+    }
+
+    .account-form input:focus {
+        border-color: #1497ff;
+        box-shadow: none;
+    }
+</style>
+
+
+<div class="container-fluid">
+    <div class="row no-gutter">
+        <div class="col-md-12">
+            <div class="login d-flex align-items-center py-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-lg-6  mx-auto">
+                            <div class="p-4">
+                                {% if 'email' in request.get_full_path %}
+                                    <h3 class="mb-4">Reset Password</h3>
+                                    <p>An email containing password reset instructions has been sent to the address provided.</p>
+                                {% endif%}
+                                {% if 'complete' in request.get_full_path %}
+									<div style="text-align: center">
+										<h3 class="mb-4">Password Reset Successfully</h3>
+										<a href="{% url "account:login" %}">Login</a>
+									</div>
+                                {% endif%}
+                            </div>       
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
