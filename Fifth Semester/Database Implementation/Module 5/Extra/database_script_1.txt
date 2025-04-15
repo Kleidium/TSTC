@@ -1,0 +1,49 @@
+USE master;
+DROP DATABASE IF EXISTS Module5Mastery_PolandK_SP24;
+GO
+CREATE DATABASE Module5Mastery_PolandK_SP24;
+GO
+
+USE Module5Mastery_PolandK_SP24;
+
+CREATE TABLE Owners
+(OwnerID		INT				NOT NULL PRIMARY KEY IDENTITY,
+FirstName		varchar(255)	NOT NULL,
+LastName		varchar(255)	NOT NULL,
+BirthDate		date			NOT NULL,
+Email			varchar(255)	NOT NULL,
+Phone			varchar(50)		NOT NULL);
+
+CREATE TABLE Genres
+(GenreID		INT				NOT NULL PRIMARY KEY IDENTITY,
+GenreName		varchar(255)	NOT NULL);
+
+CREATE TABLE Platforms
+(PlatformID		INT				NOT NULL PRIMARY KEY IDENTITY,
+PlatformName	varchar(255)	NOT NULL);
+
+CREATE TABLE Games
+(GameID			INT				NOT NULL PRIMARY KEY IDENTITY,
+Title			varchar(255)	NOT NULL,
+Price			smallmoney,
+PlayerLimit		int				NOT NULL,
+ReleaseDate		date			NOT NULL,
+GenreID			int				NOT NULL REFERENCES Genres(GenreID),
+PlatformID		int				NOT NULL REFERENCES Platforms(PlatformID))
+
+CREATE TABLE Ownerships
+(OwnershipID	INT				NOT NULL PRIMARY KEY IDENTITY,
+OwnerID			INT				NOT NULL REFERENCES Owners(OwnerID),
+GameID			INT				NOT NULL REFERENCES Games(GameID))
+
+CREATE INDEX IX_Games_GenreID
+ON Games(GenreID);
+
+CREATE INDEX IX_Games_PlatformID
+ON Games(PlatformID);
+
+CREATE INDEX IX_Ownerships_OwnerID
+ON Ownerships(OwnerID);
+
+CREATE INDEX IX_Ownerships_GameID
+ON Ownerships(GameID);
